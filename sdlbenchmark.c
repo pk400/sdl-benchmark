@@ -3,17 +3,17 @@
 #include "SDL2/SDL.h"
 
 int main(int argc, char** argv) {
-    //if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
-    //    printf("Error: %s", SDL_GetError());
+    if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
+        printf("Initialization Error: %s", SDL_GetError());
     
     SDL_Window* win = SDL_CreateWindow("Benchmark", 100, 100, 640, 480,
         SDL_WINDOW_SHOWN);
     if(!win)
-        printf("Error: %s", SDL_GetError());
+        printf("Window Error: %s", SDL_GetError());
     
     SDL_Surface* sur = SDL_GetWindowSurface(win);
     if(!sur)
-        printf("Error: %s", SDL_GetError());
+        printf("Surface Error: %s", SDL_GetError());
     
 
 
