@@ -1,5 +1,5 @@
 # sdl-benchmark
-Compile with:
+How to run:
 ```bash
-g++ sdlbenchmark.cpp `./bin/sdl2-config --libs
+./run_benchmark
 ```
