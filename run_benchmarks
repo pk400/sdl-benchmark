@@ -2,6 +2,7 @@
 import os
 import sys
 import subprocess
+from termcolor import colored
 
 os.system('clear')
 
@@ -37,7 +38,9 @@ for i in range(n):
         stderr=subprocess.PIPE)
     (out, err) = run_bm.communicate()
     average = average + float(out)
-    print('Test %s: %s seconds\n\tErrors:\n\t%s\n' % (str(i+1), out, err))
+    print('Test %s: %s seconds' % (str(i+1), out))
+    if len(err) > 0:
+        print('\tErrors: \n\t%s' % (err))
 print('## Benchmark complete!')
 
 # Output benchmark results
